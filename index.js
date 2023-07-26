@@ -1,5 +1,6 @@
 var gridSize = 12;
 var slider = document.querySelector('.slider');
+const gridToggle = document.querySelector('.toggle');
 
 function setGrid(size) {
     container = document.querySelector('.sketch-area');
@@ -15,6 +16,10 @@ function setGrid(size) {
     }
 }
 
+function toggleGrid() {
+    
+}
+
 function deleteGrid(container) {
     container = document.querySelector('.sketch-area');
     var child = container.firstElementChild;
@@ -25,9 +30,12 @@ function deleteGrid(container) {
 }
 
 setGrid(gridSize);
+
 slider.value = gridSize;
 slider.oninput = () => {
     gridSize = slider.value;
     deleteGrid();
     setGrid(gridSize);
 }
+
+gridToggle.addEventListener('click', toggleGrid)

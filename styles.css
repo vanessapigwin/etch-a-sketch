@@ -4,77 +4,124 @@
     --black: #19323C;
     --primary: #A93F55;
     --light-primary: #E3B5BE;
+    --toolbar-width: 15%;
 }
-
+/* 
 * {
     border: solid 1px red;
-}
+} */
 
 body {
+    margin: 0;
     font-family:Arial, Helvetica, sans-serif;
+    width: 100vw;
+}
+
+h1 {
+    margin: 16px;
+}
+
+.content {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 100vh;
-    margin: 0;
-}
-
-ul {
-    margin: 0;
-    padding: 10px;
-    list-style-type: none;
-    
+    margin: auto;
+    max-width: 800px;
 }
 
 .header {
     color: var(--primary);
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
     width: 100%;
     text-align: center;
+    margin: 0;
 }
 
 .footer {
-    font-size: 20px;
+    font-size: 16px;
     background-color: var(--black);
     color: var(--white-alt);
-    padding: 10px 0px;
+    padding: 6px 0px;
     width: 100%;
     text-align: center;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 .settings {
     padding: 10px 0;
     width: 90%;
-    flex: 0 0 30px;
+    flex: 1 0 40px;
     display: flex;
-    justify-content: space-between;
+    align-content: baseline;
     align-items: center;
+    justify-content:center;
+    gap: 30px;
 }
 
-.settings > div {
-    width: 10%;
+.toggle {
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--primary);
+    flex: 0 0 50px;
+    text-align: center;
+    border: solid 2px var(--primary);
+    border-radius: 12px;
+    padding: 6px;
 }
+
+.active {
+    background-color: var(--primary);
+    color: var(--white-alt);
+}
+
+input {
+    width: 100%;
+    accent-color: var(--primary);
+}
+
+input::-webkit-slider-thumb {
+    cursor: ew-resize;
+    transition: background .3s ease-in-out;
+  }
 
 .pad-container {
-    flex: 1;
+    flex: 5;
     display: flex;
     align-content: center;
     width: 90%;
+    gap: 20px;
 }
 
 .toolbar {
-    width: 20%;
-    margin: auto;
+    flex: 0 0 var(--toolbar-width);
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 30px;
+}
+
+li {
+    width: 100%;
+}
+
+.mode {
+    font-weight: bold;
+    background-color: var(--white);
+    color: var(--primary);
+    text-align: center;
+    border: solid 2px var(--primary);
+    border-radius: 12px;
+    padding: 6px;
 }
 
 .sketch-area {
+    border: solid 1px var(--black);
     aspect-ratio: 1/1;
     align-self: center;
-    padding: 10px;
     flex: 1 1 300px;
     display: flex;
     flex-wrap: wrap;

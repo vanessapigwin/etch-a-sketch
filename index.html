@@ -9,19 +9,21 @@
 </head>
 <body>
     <div class="header"><h1>Etch-A-Sketch</h1></div>
-    <div class="pad-container">
-        <ul class="toolbar">
-            <li>Color</li>
-            <li>Rainbow</li>
-            <li>Darken</li>
-            <li>Erase</li>
-            <li>Clear</li>
-        </ul>
-        <div class="sketch-area"></div>
-    </div>
-    <div class="settings">
-        <div><a>Grid</a></div>
-        <input type="range", min="1", max="64", class="slider">
+    <div class="content">
+        <div class="pad-container">
+            <ul class="toolbar">
+                <li><div class="mode"><a>Color</a></div></li>
+                <li><div class="mode"><a>Rainbow</a></div></li>
+                <li><div class="mode"><a>Darken</a></div></li>
+                <li><div class="mode"><a>Erase</a></div></li>
+                <li><div class="mode"><a>Clear</a></div></li>
+            </ul>
+            <div class="sketch-area"></div>
+        </div>
+        <div class="settings">
+            <div class="toggle"><a>Grid</a></div>
+            <div><input type="range", min="1", max="64", class="slider"></div>
+        </div>
     </div>
     <div class="footer">vanessapigwin ❤️ The Odin Project</div>
 </body>
