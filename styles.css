@@ -6,9 +6,9 @@
     --light-primary: #E3B5BE;
 }
 
-/* * {
+* {
     border: solid 1px red;
-} */
+}
 
 body {
     font-family:Arial, Helvetica, sans-serif;
@@ -21,8 +21,10 @@ body {
 }
 
 ul {
+    margin: 0;
     padding: 10px;
     list-style-type: none;
+    
 }
 
 .header {
@@ -44,9 +46,23 @@ ul {
     flex-wrap: wrap;
 }
 
+.settings {
+    padding: 10px 0;
+    width: 90%;
+    flex: 0 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settings > div {
+    width: 10%;
+}
+
 .pad-container {
     flex: 1;
     display: flex;
+    align-content: center;
     width: 90%;
 }
 
@@ -56,11 +72,14 @@ ul {
 }
 
 .sketch-area {
+    aspect-ratio: 1/1;
+    align-self: center;
     padding: 10px;
-    flex: 1;
+    flex: 1 1 300px;
     display: flex;
     flex-wrap: wrap;
-    margin: auto;
+    width: auto;
+    height: 90%;
 }
 
 .sketch-area > div {
@@ -70,7 +89,6 @@ ul {
 }
 
 .pixel {
-    aspect-ratio: 1/1;
     flex: 1 0 auto;
     border: solid 1px var(--white-alt);
 }
