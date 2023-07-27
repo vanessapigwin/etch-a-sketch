@@ -12,13 +12,21 @@
     <div class="content">
         <div class="pad-container">
             <ul class="toolbar">
-                <li><div class="mode"><a>Color</a></div></li>
-                <li><div class="mode"><a>Rainbow</a></div></li>
-                <li><div class="mode"><a>Darken</a></div></li>
-                <li><div class="mode"><a>Erase</a></div></li>
-                <li><div class="mode"><a>Clear</a></div></li>
+                <li><div class="mode">
+                    <input type="radio" name="color-mode" id="color" value="Color">Color
+                </div></li>
+                <li><div class="mode">
+                    <input type="radio" name="color-mode" id="rainbow" value="Rainbow">Rainbow
+                </div></li>
+                <li><div class="mode">
+                    <input type="radio" name="color-mode" id="gradient" value="Gradient">Gradient
+                </div></li>
+                <li><div class="mode">
+                    <input type="radio" name="color-mode" id="eraser" value="Eraser">Eraser
+                </div></li>
+                <li><div class="mode" id="clear"><a>Clear</a></div></li>
             </ul>
-            <div class="sketch-area" id="sketch-area"></div>
+            <div class="sketch-area"></div>
         </div>
         <div class="settings">
             <div class="toggle">

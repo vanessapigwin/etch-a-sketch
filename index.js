@@ -1,8 +1,8 @@
 var gridSize = 12;
-var slider = document.querySelector('.slider');
 const container = document.querySelector('.sketch-area');
+var color = '#19323C';
 
-function setGrid(size) {
+function setGridSize(size) {
     for(let i=0; i < size; i++) {
         row = document.createElement('div');
         for (let j = 0; j < size; j++) {
@@ -29,22 +29,50 @@ function deleteGrid() {
     }
 }
 
-function addColor(e) {
-    console.log(e)
+function clearGrid() {
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.forEach((pixel)=> {
+        pixel.style['background-color'] = 'white';
+    });
 }
 
-setGrid(gridSize);
+function getColorMode() {
+    let choice = document.querySelector('input[name=color-mode]:checked').value;
+    console.log(choice);
+    switch (choice) {
+        case 'Color':
+            color = '#19323C';
+            break;
+        case 'Rainbow':
+            color = '#E3B5BE';
+            break;
+        case 'Gradient':
+            color = "#A93F55";
+            break;
+        case 'Eraser':
+            color = '#FFFFFF';
+            break;
+        default:
+            color = '#19323C';
+    }
+}
 
+setGridSize(gridSize);
+
+var slider = document.querySelector('.slider');
 slider.value = gridSize;
 slider.oninput = () => {
     gridSize = slider.value;
     deleteGrid();
-    setGrid(gridSize);
+    setGridSize(gridSize);
 }
 
+document.querySelectorAll('input[name="color-mode"]').forEach(
+    (ele) => ele.addEventListener('click', getColorMode)
+);
+document.querySelector('#clear').addEventListener('click', clearGrid);
 document.querySelector('.toggle').addEventListener('click', toggleGrid);
-
-document.getElementById('sketch-area').addEventListener('mouseover', function(e) {
+document.querySelector('.sketch-area').addEventListener('mouseover', function(e) {
     if (e.target.classList.contains('pixel'))
-        e.target.style['background-color'] = 'black';
-}, false);
+        e.target.style['background-color'] = color;
+});

@@ -2,6 +2,9 @@
 3rd Activity from TOP
 
 ## Lessons applied
+1. Flex
+2. Input elements (slider, checkbox, radio buttton)
+3. Event Listeners
 
 
 ## Attribution

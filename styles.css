@@ -127,6 +127,10 @@ li {
     padding: 6px;
 }
 
+.mode > input {
+    display: none;
+}
+
 .sketch-area {
     border: solid 1px var(--black);
     aspect-ratio: 1/1;
