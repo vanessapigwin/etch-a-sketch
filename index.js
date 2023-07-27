@@ -37,7 +37,14 @@ function clearGrid() {
     });
 }
 
-function getColorMode(e) {
+function getColorMode(e) {   
+    document.querySelectorAll('.mode').forEach((button) => {
+        if (button.classList.contains('toggle'))
+            button.classList.remove('toggle');
+        }
+    );
+    e.target.parentNode.classList.toggle('toggle');
+
     switch (e.target.value) {
         case 'Color':
             color = '#19323C';
@@ -54,13 +61,6 @@ function getColorMode(e) {
         default:
             color = '#19323C';
     }
-    
-    document.querySelectorAll('.mode').forEach((button) => {
-        if (button.classList.contains('toggle'))
-            button.classList.remove('toggle');
-        }
-    );
-    e.target.parentNode.classList.toggle('toggle');
 }
 
 setGridSize(gridSize);

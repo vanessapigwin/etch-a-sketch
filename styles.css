@@ -71,6 +71,9 @@ li {
     width: 100%;
 }
 
+label {
+    padding: 6px;
+}
 .mode {
     font-weight: bold;
     background-color: var(--white);
@@ -80,10 +83,6 @@ li {
     border-radius: 12px;
     padding: 6px;
     transition: 0.2s all linear;
-}
-
-.mode:hover {
-    cursor: pointer;
 }
 
 .mode > input {
@@ -153,9 +152,14 @@ input {
 
 input::-webkit-slider-thumb {
     cursor: ew-resize;
-    transition: background .3s ease-in-out;
   }
 
 .grid-off {
     border: none;
+}
+
+#clear:hover {
+    background-color: var(--primary);
+    color: var(--white-alt);
+    transition: background-color .2s ease-in-out;
 }
