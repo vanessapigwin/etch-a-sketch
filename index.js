@@ -17,7 +17,10 @@ function setGrid(size) {
 }
 
 function toggleGrid() {
-    
+    const pixels = document.querySelectorAll('.pixel');
+    pixels.forEach((pixel)=> {
+        pixel.classList.toggle('grid-off');
+    });
 }
 
 function deleteGrid(container) {
@@ -38,4 +41,4 @@ slider.oninput = () => {
     setGrid(gridSize);
 }
 
-gridToggle.addEventListener('click', toggleGrid)
+gridToggle.addEventListener('click', toggleGrid);

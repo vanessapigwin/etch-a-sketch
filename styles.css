@@ -70,7 +70,11 @@ h1 {
     padding: 6px;
 }
 
-.active {
+.toggle.checkbox {
+    display: none;
+}
+
+.toggle {
     background-color: var(--primary);
     color: var(--white-alt);
 }
@@ -138,4 +142,8 @@ li {
 .pixel {
     flex: 1 0 auto;
     border: solid 1px var(--white-alt);
+}
+
+.grid-off {
+    border: none;
 }
