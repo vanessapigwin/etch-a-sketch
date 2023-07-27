@@ -19,6 +19,7 @@ function toggleGrid() {
     pixels.forEach((pixel)=> {
         pixel.classList.toggle('grid-off');
     });
+    this.classList.toggle('toggle-off');
 }
 
 function deleteGrid() {
@@ -36,10 +37,8 @@ function clearGrid() {
     });
 }
 
-function getColorMode() {
-    let choice = document.querySelector('input[name=color-mode]:checked').value;
-    console.log(choice);
-    switch (choice) {
+function getColorMode(e) {
+    switch (e.target.value) {
         case 'Color':
             color = '#19323C';
             break;
@@ -55,6 +54,13 @@ function getColorMode() {
         default:
             color = '#19323C';
     }
+    
+    document.querySelectorAll('.mode').forEach((button) => {
+        if (button.classList.contains('toggle'))
+            button.classList.remove('toggle');
+        }
+    );
+    e.target.parentNode.classList.toggle('toggle');
 }
 
 setGridSize(gridSize);
