@@ -79,6 +79,11 @@ h1 {
     color: var(--white-alt);
 }
 
+.toggle-off {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
 input {
     width: 100%;
     accent-color: var(--primary);

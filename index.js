@@ -1,10 +1,8 @@
 var gridSize = 12;
 var slider = document.querySelector('.slider');
-const gridToggle = document.querySelector('.toggle');
+const container = document.querySelector('.sketch-area');
 
 function setGrid(size) {
-    container = document.querySelector('.sketch-area');
-
     for(let i=0; i < size; i++) {
         row = document.createElement('div');
         for (let j = 0; j < size; j++) {
@@ -23,13 +21,16 @@ function toggleGrid() {
     });
 }
 
-function deleteGrid(container) {
-    container = document.querySelector('.sketch-area');
+function deleteGrid() {
     var child = container.firstElementChild;
     while (child) {
         container.removeChild(child);
         child = container.firstElementChild;
     }
+}
+
+function addColor(e) {
+    console.log(e)
 }
 
 setGrid(gridSize);
@@ -41,4 +42,9 @@ slider.oninput = () => {
     setGrid(gridSize);
 }
 
-gridToggle.addEventListener('click', toggleGrid);
+document.querySelector('.toggle').addEventListener('click', toggleGrid);
+
+document.getElementById('sketch-area').addEventListener('mouseover', function(e) {
+    if (e.target.classList.contains('pixel'))
+        e.target.style['background-color'] = 'black';
+}, false);
