@@ -1,11 +1,13 @@
-var color = '#19323C';
+var color = "#19323C";
+var colorMode = 'Color';
 const picker = document.querySelector('#color-picker');
+var gradientCounter;
 
 
 function getColorMode(e) {
     picker.style['display'] = 'none'; 
 
-    // reset toggle styles   
+    // reset toggled on button   
     document.querySelectorAll('.mode').forEach((button) => {
         if (button.classList.contains('toggle'))
             button.classList.remove('toggle');
@@ -15,30 +17,52 @@ function getColorMode(e) {
     
     switch (e.target.value) {
         case 'Color':
-            color = '#19323C';
+            colorMode = 'Color';
             picker.style['display'] = 'block';
             picker.click()
             break;
         case 'Rainbow':
-            color = '#E3B5BE';
+            colorMode = 'Rainbow';
             break;
         case 'Gradient':
-            color = "#A93F55";
+            colorMode = 'Gradient';
+            gradientCounter = 0;
             break;
         case 'Eraser':
+            colorMode = 'Eraser';
             color = '#FFFFFF';
             break;
         default:
             color = '#19323C';
     }
-    console.log(color);
 }
 
+function randomColor() {
+    const r = parseInt(Math.random()*255);
+    const g = parseInt(Math.random()*255);
+    const b = parseInt(Math.random()*255);
+    return `rgb(${r}, ${g}, ${b})`;
+}
+
+function darkenColor() {
+    // adds more black with each iteration
+    const c = 255 - gradientCounter / 10 * 255;
+    gradientCounter += 1;
+    return `rgb(${c}, ${c}, ${c})`;
+
+}
 
 document.querySelectorAll('input[name="color-mode"]').forEach(
     (ele) => ele.addEventListener('click', getColorMode)
 );
 document.querySelector('.sketch-area').addEventListener('mouseover', function(e) {
+    // update color each event if ranbow or darken
+    if (colorMode === 'Rainbow') {
+        color = randomColor();
+    } else if (colorMode === 'Gradient') {
+        color = darkenColor();
+    }
+    // color the pixel
     if (e.target.classList.contains('pixel'))
         e.target.style['background-color'] = color;
 });

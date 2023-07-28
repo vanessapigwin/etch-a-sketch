@@ -34,6 +34,7 @@ function clearGrid() {
     pixels.forEach((pixel)=> {
         pixel.style['background-color'] = 'white';
     });
+    gradientCounter = 0;
 }
 
 function startUpGrid (){

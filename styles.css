@@ -2,14 +2,10 @@
     --white: #FFF;
     --white-alt: #F3F7F0;
     --black: #19323C;
-    --primary: #A93F55;
+    --primary: #6E8894;
     --light-primary: #E3B5BE;
     --toolbar-width: 15%;
 }
-
-/* * {
-    border: solid 1px red;
-} */
 
 body {
     margin: 0;
