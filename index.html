@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="grid.js" defer></script>
     <script src="index.js" defer></script>
 </head>
 <body>
@@ -14,6 +15,7 @@
             <ul class="toolbar">
                 <li><div class="mode toggle">
                     <input type="radio" name="color-mode" id="color" value="Color" checked>
+                    <!-- <input type="color" id="color-picker" value="#19323C"> -->
                     <label for="color">Color</label>
                 </div></li>
                 <li><div class="mode">
@@ -33,9 +35,9 @@
             <div class="sketch-area"></div>
         </div>
         <div class="settings">
-            <div class="toggle">
+            <div class="toggle" id="grid-toggle">
                 <input class="toggle checkbox" type="checkbox">
-                <div>Grid</div>
+                <label>Grid</label>
             </div>
             <div><input type="range", min="1", max="64", class="slider"></div>
         </div>
