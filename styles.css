@@ -12,6 +12,10 @@ body {
     font-family:Arial, Helvetica, sans-serif;
 }
 
+* {
+    border: solid 1px red;
+}
+
 h1 {
     margin: 16px;
 }
@@ -144,7 +148,6 @@ label {
 
 input {
     width: 100%;
-    min-width: 250px;
     accent-color: var(--primary);
 }
 
@@ -160,4 +163,8 @@ input::-webkit-slider-thumb {
     background-color: var(--primary);
     color: var(--white-alt);
     transition: background-color .2s ease-in-out;
+}
+
+.slider {
+    min-width: 250px;
 }
