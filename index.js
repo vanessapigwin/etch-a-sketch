@@ -1,4 +1,4 @@
-var color = "#19323C";
+var color = "#6E8894";
 var colorMode = 'Color';
 const picker = document.querySelector('#color-picker');
 var gradientCounter;
@@ -55,7 +55,7 @@ function darkenColor() {
 document.querySelectorAll('input[name="color-mode"]').forEach(
     (ele) => ele.addEventListener('click', getColorMode)
 );
-document.querySelector('.sketch-area').addEventListener('mouseover', function(e) {
+document.querySelector('.sketch-area').addEventListener('pointerover', function(e) {
     // update color each event if ranbow or darken
     if (colorMode === 'Rainbow') {
         color = randomColor();
@@ -65,6 +65,7 @@ document.querySelector('.sketch-area').addEventListener('mouseover', function(e)
     // color the pixel
     if (e.target.classList.contains('pixel'))
         e.target.style['background-color'] = color;
+    e.stopPropagation();
 });
 
 picker.addEventListener('change', (e) => {color = e.target.value})
