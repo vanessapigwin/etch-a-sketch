@@ -1,13 +1,11 @@
 var color = "#6E8894";
 var colorMode = 'Color';
-const picker = document.querySelector('#color-picker');
 var gradientCounter;
-
+const picker = document.querySelector('#color-picker');
 
 function getColorMode(e) {
     picker.style['display'] = 'none'; 
 
-    // reset toggled on button   
     document.querySelectorAll('.mode').forEach((button) => {
         if (button.classList.contains('toggle'))
             button.classList.remove('toggle');
@@ -45,27 +43,22 @@ function randomColor() {
 }
 
 function darkenColor() {
-    // adds more black with each iteration
     const c = 255 - gradientCounter / 10 * 255;
     gradientCounter += 1;
     return `rgb(${c}, ${c}, ${c})`;
-
 }
 
 document.querySelectorAll('input[name="color-mode"]').forEach(
     (ele) => ele.addEventListener('click', getColorMode)
 );
 document.querySelector('.sketch-area').addEventListener('pointerover', function(e) {
-    // update color each event if ranbow or darken
     if (colorMode === 'Rainbow') {
         color = randomColor();
     } else if (colorMode === 'Gradient') {
         color = darkenColor();
     }
-    // color the pixel
     if (e.target.classList.contains('pixel'))
         e.target.style['background-color'] = color;
-    e.stopPropagation();
 });
 
 picker.addEventListener('change', (e) => {color = e.target.value})
