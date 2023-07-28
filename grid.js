@@ -49,3 +49,5 @@ function startUpGrid (){
 }
 
 startUpGrid();
+document.querySelector('#clear').addEventListener('click', clearGrid);
+document.querySelector('#grid-toggle').addEventListener('click', toggleGrid);
